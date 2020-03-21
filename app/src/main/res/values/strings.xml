@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Expandable_CardView_2</string>
     <string name="click_here">Click here</string>
+    <string name="open_bottun" />
+    <string name="add_bottun" />
 </resources>

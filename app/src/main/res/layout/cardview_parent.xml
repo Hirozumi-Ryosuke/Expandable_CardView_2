@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:cardview_parent="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardview_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    cardview_parent:cardBackgroundColor="#2979ff"
-    cardview_parent:cardElevation="3dp"
-    cardview_parent:contentPadding="4dp"
-    cardview_parent:layout_constraintCircleRadius="2dp">
+    android:orientation="horizontal">
 
     <EditText
         android:id="@+id/item_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_margin="10dp"
         android:autofillHints="@string/click_here"
+        android:background="#2979ff"
         android:hint="@string/click_here"
-        android:inputType=""
-        android:textColor="#ffd600"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="20dp"/>
+        android:inputType="text"
+        android:textColor="#ffd600" />
+
+    <ImageView
+        android:id="@+id/toggle"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="-45dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/open_bottun"
+        cardview_parent:srcCompat="@drawable/toggle" />
 
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="3dp"
-        cardview_parent:srcCompat="@drawable/toggle"/>
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="-75dp"
+        cardview_parent:srcCompat="@drawable/plus"
+        android:contentDescription="@string/add_bottun" />
 
 </LinearLayout>
