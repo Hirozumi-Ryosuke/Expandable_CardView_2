@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview_parent="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardview_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#2979ff"
-    android:elevation="3dp"
-    >
+    android:layout_height="wrap_content"
+    cardview_parent:cardBackgroundColor="#2979ff"
+    cardview_parent:cardElevation="3dp"
+    cardview_parent:contentPadding="4dp"
+    cardview_parent:layout_constraintCircleRadius="2dp">
 
     <EditText
         android:id="@+id/item_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/click_here"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="20dp"
         android:layout_margin="10dp"
-        android:textColor="#ffd600"/>
+        android:autofillHints="@string/click_here"
+        android:hint="@string/click_here"
+        android:inputType=""
+        android:textColor="#ffd600"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="3dp"
+        cardview_parent:srcCompat="@drawable/toggle"/>
+
 </LinearLayout>
