@@ -3,4 +3,8 @@
     <string name="click_here">Click here</string>
     <string name="open_bottun" />
     <string name="add_bottun" />
+    <string name="bottun" />
+    <string name="toggle_bottun" />
+    <string name="add_bar" />
+    <string name="toggle" />
 </resources>
