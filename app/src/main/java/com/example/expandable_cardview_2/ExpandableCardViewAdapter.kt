@@ -20,7 +20,6 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
                     var children: List<Item>? = null)
 
     inner class ItemHolder(v: View) : RecyclerView.ViewHolder(v) {
-        var textView = v.item_text!!
         val toggleImageView = v.item_toggle_bottun!!
     }
 
@@ -40,7 +39,7 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
         val itemHolder = holder as? ItemHolder
         val item = items[position]
 
-        itemHolder?.let {
+        itemHolder?.let { it ->
             it.toggleImageView.let { it1 ->
                 it1.setImageResource(R.drawable.toggle)
                 it1.rotation = if (item.children == null) OPEN else CLOSE
@@ -63,23 +62,16 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
                         notifyItemRangeRemoved(start, end)
                     } else {
                         item.children?.let {
-                            items.addALL(start, it1)
+                            items.addAll(start, it)
                             view.animate().rotation(OPEN).start()
-                            notifyItemRangeInserted(start, it1.size)
+                            notifyItemRangeInserted(start, it.size)
                             item.children = null
                         }
                     }
                 }
             }
-
-            it.textView.text = item.text
         }
     }
-
-
     override fun getItemCount(): Int = items.size
-
     override fun getItemViewType(position: Int): Int = items[position].type
-    }
-
 }
