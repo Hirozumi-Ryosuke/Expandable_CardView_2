@@ -8,13 +8,20 @@
     android:layout_marginVertical="4dp"
     cardview_parent:cardBackgroundColor="#2979ff"
     cardview_parent:cardCornerRadius="8dp"
-    >
+    cardview_parent:cardElevation="3dp"
+    cardview_parent:contentPadding="4dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <EditText
         android:id="@+id/item_text"
         android:layout_width="match_parent"
-        android:layout_height="36dp"
-        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="70dp"
         android:autofillHints="@string/click_here"
         android:background="#2979ff"
         android:hint="@string/click_here"
@@ -25,8 +32,8 @@
         android:id="@+id/item_toggle_bottun"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="357dp"
-        android:layout_marginVertical="12dp"
+        android:layout_marginStart="-35dp"
+        android:layout_marginTop="5.5dp"
         android:contentDescription="@string/toggle"
         cardview_parent:srcCompat="@drawable/toggle" />
 
@@ -34,8 +41,10 @@
         android:id="@+id/item_add_bottun"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginVertical="13dp"
+        android:layout_marginStart="-65dp"
+        android:layout_marginTop="6dp"
         android:contentDescription="@string/add_bar"
         cardview_parent:srcCompat="@drawable/plus" />
+    </LinearLayout>
+
 </androidx.cardview.widget.CardView>

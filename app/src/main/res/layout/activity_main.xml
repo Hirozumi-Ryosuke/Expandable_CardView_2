@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:activity_main="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity"
-    android:orientation="horizontal">
+    tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_cardview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
 
-    <ImageView
-        android:id="@+id/add_blue_bottun"
-        android:layout_width="90dp"
-        android:layout_height="68dp"
-        android:src="@drawable/add_blue"
-        android:layout_marginTop="500dp"
-        android:layout_marginStart="-250dp"
-        >
+<!--    <ImageView-->
+<!--        android:id="@+id/add_blue_bottun"-->
+<!--        android:layout_width="90dp"-->
+<!--        android:layout_height="68dp"-->
+<!--        android:contentDescription="@string/bottun"-->
+<!--        android:src="@drawable/add_blue"-->
+<!--        tools:layout_editor_absoluteX="160dp"-->
+<!--        tools:layout_editor_absoluteY="477dp"></ImageView>-->
 
-    </ImageView>
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

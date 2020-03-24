@@ -10,13 +10,13 @@
     cardview_child:cardCornerRadius="8dp">
 
     <EditText
+        android:id="@+id/item_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="@string/click_here"
         android:hint="@string/click_here"
         android:inputType="text"
         android:textColor="#448aff">
-
     </EditText>
 
 </androidx.cardview.widget.CardView>
