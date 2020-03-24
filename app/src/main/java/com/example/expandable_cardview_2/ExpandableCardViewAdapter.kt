@@ -3,11 +3,12 @@ package com.example.expandable_cardview_2
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.cardview_parent.view.*
 
 class ExpandableCardViewAdapter(var items: MutableList<Item>)
-    : RecyclerView.Adapter<RecyclerView.viewHolder>() {
+    : RecyclerView.Adapter<RecyclerView.ViewHolder> (){
     companion object {
         const val PARENT = 0
         const val CHILD = 1
@@ -20,7 +21,7 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
                     var children: List<Item>? = null)
 
     inner class ItemHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val toggleImageView = v.item_toggle_bottun!!
+        val toggleImageView:ImageView = v.item_toggle_bottun
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -44,7 +45,7 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
                 it1.setImageResource(R.drawable.toggle)
                 it1.rotation = if (item.children == null) OPEN else CLOSE
 
-                it1.setOnClickListener {
+                it1.setOnClickListener {view ->
                     val start: Int = items.indexOf(item) + 1
                     if (item.children == null) {
                         var count = 0
