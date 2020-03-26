@@ -14,11 +14,29 @@ class MainActivity : AppCompatActivity() {
         val cardView= recycler_cardview
         val itemList = mutableListOf<ExpandableCardViewAdapter.Item>()
 
+        val item = ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.PARENT)
+        item.children = listOf(
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD))
+        itemList.add(item)
+
+/*
+        ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.PARENT)
+        item.children = listOf(
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD),
+            ExpandableCardViewAdapter.Item(ExpandableCardViewAdapter.CHILD))
+        itemList.add(item)
+*/
+
         cardView.layoutManager = LinearLayoutManager(this)
         cardView.adapter = ExpandableCardViewAdapter(itemList)
     }
-
-
 }
 
 
