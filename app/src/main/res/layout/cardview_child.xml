@@ -11,7 +11,7 @@
     cardview_child:cardCornerRadius="8dp">
 
     <EditText
-        android:id="@+id/item_text"
+        android:id="@+id/item_text_child"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="@string/click_here"
