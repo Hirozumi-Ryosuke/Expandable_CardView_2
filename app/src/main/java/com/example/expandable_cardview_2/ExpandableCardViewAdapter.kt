@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.cardview_parent.view.*
 
 class ExpandableCardViewAdapter(var items: MutableList<Item>)
@@ -21,7 +22,7 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
                     var children: List<Item>? = null)
 
     inner class ItemHolder(v: View) : RecyclerView.ViewHolder(v) {
-        val toggleImageView:ImageView = v.item_toggle_bottun
+        val toggleImageView:ImageView? = v.item_toggle_bottun
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -42,10 +43,10 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
 
         itemHolder?.let { it ->
             it.toggleImageView.let { it1 ->
-                it1.setImageResource(R.drawable.toggle)
-                it1.rotation = if (item.children == null) OPEN else CLOSE
+                it1?.setImageResource(R.drawable.toggle)
+                it1?.rotation = if (item.children == null) OPEN else CLOSE
 
-                it1.setOnClickListener {view ->
+                it1?.setOnClickListener {view ->
                     val start: Int = items.indexOf(item) + 1
                     if (item.children == null) {
                         var count = 0
