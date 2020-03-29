@@ -42,6 +42,14 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        holder.itemView.setOnTouchListener { v, event ->
+            inputMethodManager.hideSoftInputFromWindow(
+                container.windowToken, InputMethodManager.HIDE_NOT_ALWAYS
+            )
+            holder.itemView.requestFocus()
+            false
+        }
+
         val itemHolder = holder as? ItemHolder
         val item = items[position]
 
@@ -50,7 +58,7 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
                 it1?.setImageResource(R.drawable.toggle)
                 it1?.rotation = if (item.children == null) OPEN else CLOSE
 
-                it1?.setOnClickListener {view ->
+                it1?.setOnClickListener { view ->
                     val start: Int = items.indexOf(item) + 1
                     if (item.children == null) {
                         var count = 0
@@ -77,16 +85,6 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
                 }
             }
         }
-    }
-
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-
-        inputMethodManager.hideSoftInputFromWindow(
-            container.getWindowToken(),
-            InputMethodManager.HIDE_NOT_ALWAYS
-        )
-        container.requestFocus()
-        return false
     }
 
     override fun getItemCount(): Int = items.size
