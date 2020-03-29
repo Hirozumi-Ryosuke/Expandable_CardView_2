@@ -1,9 +1,12 @@
 package com.example.expandable_cardview_2
 
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.cardview_parent.view.*
 
@@ -15,6 +18,8 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
         const val OPEN = 0.0F
         const val CLOSE = 180.0F
     }
+    private lateinit var container: LinearLayout
+    private lateinit var inputMethodManager: InputMethodManager
 
     data class Item(val type: Int = 0,
                     var text: String = "Default",
@@ -73,6 +78,17 @@ class ExpandableCardViewAdapter(var items: MutableList<Item>)
             }
         }
     }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+
+        inputMethodManager.hideSoftInputFromWindow(
+            container.getWindowToken(),
+            InputMethodManager.HIDE_NOT_ALWAYS
+        )
+        container.requestFocus()
+        return false
+    }
+
     override fun getItemCount(): Int = items.size
     override fun getItemViewType(position: Int): Int = items[position].type
 }
